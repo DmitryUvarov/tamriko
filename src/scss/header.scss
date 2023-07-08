@@ -130,6 +130,10 @@
     &:not(:first-child) {
       margin-top: rem(8);
     }
+
+    @media (min-width: $mobile) {
+      max-width: rem(309);
+    }
   }
 
   &__link {

@@ -89,3 +89,95 @@
 }
 
 //====================================================================================================
+
+.about {
+  @include adaptiveValue("padding-top", 184, 120);
+  @include adaptiveValue("padding-bottom", 80, 60);
+  &__container {
+  }
+
+  &__body {
+    background-image: url("@img/about/bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    @media (max-width: $mobile) {
+      background-image: url("@img/about/bg1.png");
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: rem(8);
+    @include adaptiveValue("font-size", 18, 16);
+    font-weight: 700;
+    line-height: 150%;
+    text-transform: uppercase;
+
+    span {
+      display: flex;
+      align-items: center;
+      column-gap: rem(8);
+
+      &:not(:first-child) {
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: #515151;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 150%;
+    @include adaptiveValue("margin-top", 0, 4);
+  }
+
+  &__content {
+    display: flex;
+    @include adaptiveValue("gap", 20, 24);
+    @include adaptiveValue("margin-top", 43, 24);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__image-ibg {
+    padding-bottom: percent(352, 1215);
+
+    @media (min-width: $mobile) {
+      flex: 0 0 rem(289);
+      margin-top: rem(20);
+    }
+    @media (max-width: $mobile) {
+      width: percent(269, 350);
+      padding-bottom: 88.5%;
+    }
+  }
+
+  &__textlines {
+  }
+
+  &__quote {
+    max-width: rem(513);
+    margin-left: auto;
+    margin-top: rem(60);
+    @media (max-width: $mobile) {
+      margin-right: auto;
+    }
+    @media (min-width: $pc) {
+      margin-top: rem(-15);
+    }
+  }
+}
+
+//========================================================================================================================================================

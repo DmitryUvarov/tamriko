@@ -46,3 +46,108 @@
   &__button {
   }
 }
+
+//========================================================================================================================================================
+
+.textlines {
+  line-height: 150%;
+  &__line {
+    position: relative;
+    padding: rem(8) 0;
+
+    &::before {
+      content: "";
+      background-color: #515151;
+      position: absolute;
+      width: rem(300);
+      height: rem(0.5);
+      bottom: 0;
+      left: 0;
+    }
+
+    &:not(:first-child) {
+      margin-top: rem(8);
+    }
+    &_1 {
+      max-width: 347px;
+      &::before {
+        left: rem(-94);
+      }
+    }
+
+    &_2 {
+      max-width: 347px;
+      &::before {
+        width: rem(185);
+        left: rem(-58);
+      }
+    }
+
+    &_3 {
+      max-width: 505px;
+      &::before {
+        width: rem(185);
+        left: rem(-68);
+      }
+    }
+
+    &_4 {
+      max-width: 298px;
+      &::before {
+        width: rem(185);
+        left: rem(-44);
+      }
+    }
+
+    &_5 {
+      max-width: 225px;
+      &::before {
+        width: rem(185);
+        left: rem(-163);
+      }
+    }
+  }
+}
+.quote {
+  text-align: right;
+  @include adaptiveValue("font-size", 18, 16);
+
+  &__text {
+    color: #212121;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+
+    padding-bottom: rem(8);
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100vw;
+      height: rem(0.5);
+      bottom: 0;
+      left: rem(130);
+      background-color: #515151;
+
+      @media (max-width: $mobile) {
+        width: percent(204, 250);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: $mobile) {
+      text-align: center;
+    }
+  }
+
+  &__author {
+    margin-top: rem(8);
+    color: #000;
+    font-weight: 700;
+    line-height: 150%;
+    text-transform: uppercase;
+  }
+}
