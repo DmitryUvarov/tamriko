@@ -1,1 +1,42 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+.guide {
+  @include adaptiveValue("max-width", 435, 250);
+  width: 100%;
+
+  &__title {
+    position: relative;
+    display: block;
+    width: max-content;
+
+    color: #fff;
+    @include adaptiveValue("font-size", 65, 35);
+    font-weight: 400;
+    line-height: 150%;
+    &_left {
+      margin-left: auto;
+      @include adaptiveValue("margin-top", -30, -17);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    bottom: rem(-9);
+    left: rem(7);
+    color: #aa2f1e;
+    @include adaptiveValue("font-size", 18, 12);
+    font-weight: 700;
+    line-height: 150%;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: #fff;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 150%;
+    text-align: center;
+  }
+
+  &__button {
+  }
+}
