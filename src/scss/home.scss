@@ -1,6 +1,16 @@
 //====================================================================================================
 .hero {
   position: relative;
+
+  background-image: url("@img/hero/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media (max-width: $mobile) {
+    background-image: url("@img/hero/bg1.jpg");
+  }
+
   &__container {
   }
 
