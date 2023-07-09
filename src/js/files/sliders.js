@@ -111,28 +111,25 @@ function initSliders() {
 				prevEl: '.makeup__navigation .button-prev',
 				nextEl: '.makeup__navigation .button-next',
 			},
-			/*
-			// Брейкпоінти
-			breakpoints: {
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
+		});
+	}
+	if (document.querySelector('.reviews__slider')) {
+		new Swiper('.reviews__slider', {
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 30,
+			speed: 800,
+
+			pagination: {
+				el: '.reviews__pagination',
+				clickable: true,
 			},
-			*/
+			navigation: {
+				prevEl: '.reviews__navigation .button-prev',
+				nextEl: '.reviews__navigation .button-next',
+			},
 		});
 	}
 }
