@@ -1,5 +1,5 @@
 /*
-Документація по роботі у шаблоні: 
+Документація по роботі у шаблоні:
 Документація слайдера: https://swiperjs.com/
 Сніппет(HTML): swiper
 */
@@ -7,10 +7,10 @@
 // Підключаємо слайдер Swiper з node_modules
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 /*
 Основні модулі слайдера:
-Navigation, Pagination, Autoplay, 
+Navigation, Pagination, Autoplay,
 EffectFade, Lazy, Manipulation
 Детальніше дивись https://swiperjs.com/
 */
@@ -25,26 +25,16 @@ import "../../scss/base/swiper.scss";
 
 // Ініціалізація слайдерів
 function initSliders() {
-	// Список слайдерів
-	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.swiper')) { // Вказуємо склас потрібного слайдера
-		// Створюємо слайдер
-		new Swiper('.swiper', { // Вказуємо склас потрібного слайдера
-			// Підключаємо модулі слайдера
-			// для конкретного випадку
-			modules: [Navigation],
+
+	if (document.querySelector('.swiper12')) {
+		new Swiper('.swiper12', {
+			modules: [],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
-			spaceBetween: 0,
+			spaceBetween: 30,
 			autoHeight: true,
 			speed: 800,
-
-			//touchRatio: 0,
-			//simulateTouch: false,
-			//loop: true,
-			//preloadImages: false,
-			//lazy: true,
 
 			/*
 			// Ефекти
@@ -102,6 +92,47 @@ function initSliders() {
 			on: {
 
 			}
+		});
+	}
+	if (document.querySelector('.makeup__slider')) {
+		new Swiper('.makeup__slider', {
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 30,
+			speed: 800,
+
+			pagination: {
+				el: '.makeup__pagination',
+				clickable: true,
+			},
+			navigation: {
+				prevEl: '.makeup__navigation .button-prev',
+				nextEl: '.makeup__navigation .button-next',
+			},
+			/*
+			// Брейкпоінти
+			breakpoints: {
+				640: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
 		});
 	}
 }
