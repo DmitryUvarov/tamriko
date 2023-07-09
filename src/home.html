@@ -457,11 +457,19 @@
 							<div class="guide__text">"ЩО НЕ ТАК З КОСМЕТИЧКОЮ"</div>
 						</div>
 						<div class="contacts-block__form-block">
-							<form action="#" class="contacts-block__form">
-								<input type="text" placeholder="ФІО" class="contacts-block__input">
-								<input type="text" placeholder="Пошта" class="contacts-block__input">
-								<input type="text" placeholder="Телефон" class="contacts-block__input">
-								<button type="button" class="contacts-block__button button">Купити</button>
+							<form action="#" method="POST" action="sendmail.php" data-dev class="contacts-block__form">
+								<div class="contacts-block__line">
+									<input type="text" placeholder="ФІО" data-error="Заповніть поле ФІО" data-required class="contacts-block__input">
+								</div>
+								<div class="contacts-block__line">
+									<input type="text" data-error="Введен не верный E-mail" data-required="email" placeholder="Пошта" class="contacts-block__input">
+								</div>
+								<div class="contacts-block__line">
+									<input type="text" data-error="Введен не верный телефон" data-required="phone" data-phone placeholder="Телефон" class="contacts-block__input">
+								</div>
+
+
+								<button type="submit" class="contacts-block__button button">Купити</button>
 							</form>
 							<div class="contacts-block__quote quote">
 								<div class="quote__text">«GUIDED COURSE - це можливість перейняти мій досвід, уникнути помилок, пройти шлях легше та впевненіше. Отримати знання про продукти на рівні візажиста.»</div>
