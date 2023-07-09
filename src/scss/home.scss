@@ -208,9 +208,11 @@
     }
 
     &_mobile {
-      display: block;
       @media (min-width: $mobile) {
         display: none;
+      }
+      @media (max-width: $mobile) {
+        display: block;
       }
 
       .makeup__slide img {
