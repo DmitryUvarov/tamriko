@@ -10,8 +10,15 @@
 //========================================================================================================================================================
 
 .guide {
+  position: relative;
   @include adaptiveValue("max-width", 435, 250);
   width: 100%;
+
+  &_dark {
+    .guide__title {
+      color: #212121;
+    }
+  }
 
   &__content {
     @include adaptiveValue("max-width", 435, 210);
@@ -53,6 +60,22 @@
   }
 
   &__button {
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    column-gap: rem(2);
+    @include adaptiveValue("font-size", 22, 16);
+    line-height: 150%;
+    position: absolute;
+    top: 0;
+    right: rem(-55);
+    @include adaptiveValue("right", -55, -30);
+
+    &::before {
+      @include adaptiveValue("font-size", 28, 21);
+    }
   }
 }
 
