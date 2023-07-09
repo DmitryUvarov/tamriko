@@ -203,6 +203,7 @@
   gap: rem(20);
 
   .swiper-pagination-bullet {
+    position: relative;
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -211,6 +212,15 @@
     border-radius: 50%;
     transition: all 0.3s ease 0s;
     cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: rem(-8);
+      left: rem(-8);
+      right: rem(-8);
+      bottom: rem(-8);
+    }
   }
 
   .swiper-pagination-bullet-active {

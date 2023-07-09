@@ -132,6 +132,25 @@ function initSliders() {
 			},
 		});
 	}
+	if (document.querySelector('.works__slider .swiper')) {
+		new Swiper('.works__slider .swiper', {
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			speed: 800,
+
+			pagination: {
+				el: '.works__pagination',
+				clickable: true,
+			},
+			navigation: {
+				prevEl: '.works__navigation .button-prev',
+				nextEl: '.works__navigation .button-next',
+			},
+		});
+	}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
