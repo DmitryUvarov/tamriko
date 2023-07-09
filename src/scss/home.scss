@@ -250,3 +250,82 @@
 }
 
 //========================================================================================================================================================
+
+.course {
+  background: rgba(231, 233, 228, 0.3);
+  @include adaptiveValue("padding-top", 100, 48);
+  @include adaptiveValue("padding-bottom", 100, 48);
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+
+    @media (max-width: $tablet) {
+      column-gap: rem(20);
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: rem(45);
+    }
+  }
+
+  &__content {
+    flex: 0 0 percent(600, 1215);
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 48, 24);
+  }
+
+  &__textlines {
+  }
+
+  &__image {
+    display: flex;
+    column-gap: rem(55);
+    @include adaptiveValue("column-gap", 55, 25, 0, 1215, 991);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: center;
+      gap: rem(45);
+    }
+  }
+
+  &__text {
+    position: relative;
+    color: #000;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 150%;
+    height: fit-content;
+
+    &::before {
+      font-size: rem(47);
+      position: absolute;
+      bottom: rem(-81);
+      left: 0;
+
+      @media (max-width: $mobile) {
+        left: auto;
+        bottom: auto;
+        right: 0;
+        top: rem(-66);
+        transform: rotate(214deg) scale(-1, 1);
+      }
+    }
+  }
+
+  &__img {
+  }
+
+  &__quote {
+    margin-top: rem(25);
+    max-width: 701px;
+    margin-left: auto;
+
+    .quote__text {
+      text-transform: uppercase;
+    }
+  }
+}

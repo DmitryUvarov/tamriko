@@ -1,7 +1,7 @@
 // Заголовки, загальні БЕМ блоки та інше...
 
 .title {
-  font-size: rem(18);
+  @include adaptiveValue("font-size", 18, 16);
   font-weight: 700;
   line-height: 150%;
   text-transform: uppercase;
@@ -60,6 +60,25 @@
 
 .textlines {
   line-height: 150%;
+
+  &_dot {
+    .textlines__line {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      &::after {
+        content: "";
+        width: rem(8);
+        height: rem(8);
+        border-radius: 50%;
+        display: inline-block;
+        background-color: #212121;
+        flex-shrink: 0;
+        margin-right: rem(11);
+        margin-top: rem(8);
+      }
+    }
+  }
   &__line {
     position: relative;
     padding: rem(8) 0;
@@ -115,6 +134,14 @@
         left: rem(-163);
       }
     }
+
+    &_6 {
+      max-width: 225px;
+      &::before {
+        width: rem(225);
+        left: rem(0);
+      }
+    }
   }
 }
 .quote {
@@ -158,6 +185,11 @@
     font-weight: 700;
     line-height: 150%;
     text-transform: uppercase;
+  }
+
+  &__subtitle {
+    line-height: 150%;
+    margin-top: rem(8);
   }
 }
 
